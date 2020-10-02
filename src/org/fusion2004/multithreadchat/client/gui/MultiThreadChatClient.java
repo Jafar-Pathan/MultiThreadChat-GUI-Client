@@ -31,7 +31,7 @@ public class MultiThreadChatClient extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane = new javax.swing.JScrollPane();
         chatConsole = new javax.swing.JTextArea();
         sendText = new javax.swing.JTextField();
         sendButton = new javax.swing.JButton();
@@ -45,14 +45,14 @@ public class MultiThreadChatClient extends javax.swing.JFrame {
         setTitle("MultiThreadChat GUI Client");
         setMinimumSize(new java.awt.Dimension(471, 349));
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         chatConsole.setColumns(20);
         chatConsole.setEditable(false);
         chatConsole.setFont(new java.awt.Font("Monospaced", 0, 12));
         chatConsole.setLineWrap(true);
         chatConsole.setRows(5);
-        jScrollPane1.setViewportView(chatConsole);
+        jScrollPane.setViewportView(chatConsole);
 
         sendText.setFont(new java.awt.Font("Monospaced", 0, 12));
         sendText.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -117,7 +117,6 @@ public class MultiThreadChatClient extends javax.swing.JFrame {
             ThreadCommunicator.addSendMessage(sendText.getText());
             sendText.setText("");
         }
-        //sendText.grabFocus();
         sendText.requestFocus();
     }
 
@@ -193,18 +192,7 @@ public class MultiThreadChatClient extends javax.swing.JFrame {
 
         
 
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                chatConsole.append("Welcome to the MultiThreadChat GUI client!");
-            }
-        });
-        
-        Thread initialConnect = new Thread(new Runnable(){
-            public void run() {
-                ThreadCommunicator.connect();
-            }
-        });
-        initialConnect.start();*/
+
 
     }
 
